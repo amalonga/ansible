@@ -3,7 +3,7 @@ node {
     stage('Preparation') { // for display purposes
         // Get some code from a GitHub repository
 
-        git 'https://github.com/amalonga/ansible.git'
+        git credentialsId: 'am', url: 'https://github.com/amalonga/ansible.git'
     }
     stage('Build') {
         // Run the playbook  build
