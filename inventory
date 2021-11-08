@@ -1,0 +1,5 @@
+[destination]
+192.168.1.59
+[k8s]
+192.168.1.29 ansible_user=amalonga
+

@@ -1,0 +1,11 @@
+---
+- name: test des roles
+  hosts: k8s
+  roles:
+    - role:  mariadb
+      tags: [mariadb]
+#    - role: prometheus
+#      tags: [prometheus]
+#   - role: redis
+#     tags: [redis]
+    
