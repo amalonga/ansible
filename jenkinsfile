@@ -7,7 +7,7 @@ node {
     }
     stage('Build') {
         // Run the playbook  build
-        sh ' ansible-playbook -vvv  -o StrictHostKeyChecking=no -i inventory playbook.yml'
+        sh ' ansible-playbook  -i inventory playbook.yml'
     }
 }
 
