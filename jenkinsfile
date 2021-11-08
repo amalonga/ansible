@@ -7,7 +7,7 @@ node {
     }
     stage('Build') {
         // Run the playbook  build
-                sh ' ansible-playbook -i inventory playbook.yml'
+        sh ' ansible-playbook -vvv -i inventory playbook.yml'
     }
 }
 
