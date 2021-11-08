@@ -1,0 +1,19 @@
+---
+# tasks file for perquisite
+
+- name: Insure {{ dest_rsync_rpms }}  exists
+  file:
+    path:  "{{ dest_rsync_rpms }}"
+    state: directory
+    mode: '0755'
+ 
+- name: copy src  rsync rpms to remote host
+  copy:
+    src:  "{{ src_rsync_rpms }}"
+    dest: "{{ dest_rsync_rpms }}"
+
+- name: install rsync
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ rsync_rpms }}"

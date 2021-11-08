@@ -1,0 +1,40 @@
+---
+# tasks file for roles/mariadb
+- name: insure mariadb/rpms exists
+  file:
+    path:  mariadb/rpms
+    state: directory
+    mode:  '0755'
+
+- name: Install rsync
+  yum:
+    name: rsync
+    state: present
+  become: yes
+
+- name: copy rpms from roles/mariadb/assets/ to remote mariadb/rpms
+  synchronize:
+    src: assets/
+    dest: mariadb/rpms/
+   
+- name: Install mariadb from a local directory 
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ mariadb_rpms }}"
+  become: yes
+
+- name: Demarrer le service mariadb
+  systemd:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Print mysql version 
+  shell: ' mysql --user root --password=""  --execute "select version()"'
+  register: result
+
+- name: Print result data
+  debug:
+    var: result

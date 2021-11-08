@@ -1,0 +1,15 @@
+---
+# vars file for roles/mariadb
+
+mariadb_rpms:
+  - mariadb/rpms/perl-Compress-Raw-Bzip2-2.061-3.el7.x86_64.rpm
+  - mariadb/rpms/perl-Compress-Raw-Zlib-2.061-4.el7.x86_64.rpm
+  - mariadb/rpms/perl-Data-Dumper-2.145-3.el7.x86_64.rpm
+  - mariadb/rpms/perl-DBD-MySQL-4.023-6.el7.x86_64.rpm
+  - mariadb/rpms/perl-DBI-1.627-4.el7.x86_64.rpm
+  - mariadb/rpms/perl-IO-Compress-2.061-2.el7.noarch.rpm
+  - mariadb/rpms/perl-Net-Daemon-0.48-5.el7.noarch.rpm
+  - mariadb/rpms/perl-PlRPC-0.2020-14.el7.noarch.rpm
+  - mariadb/rpms/mariadb-5.5.68-1.el7.x86_64.rpm
+  - mariadb/rpms/mariadb-server-5.5.68-1.el7.x86_64.rpm
+
