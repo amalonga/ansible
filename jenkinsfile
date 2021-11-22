@@ -1,5 +1,5 @@
 node {
-    def mvnHome
+    def mvnHome= "Amel MALONGA est un expert docker, K8S jenkins!!"
     stage('Preparation') { // for display purposes
         // Get some code from a GitHub repository
 
@@ -8,6 +8,7 @@ node {
     stage('Build') {
         // Run the playbook  build
         sh ' ansible-playbook  -i inventory playbook.yml'
+        echo "mvnHome: $mvnHome"
     }
 }
 
