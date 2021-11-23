@@ -8,7 +8,7 @@ node {
     stage('Build') {
         // Run the playbook  build
         sh ' ansible-playbook  -i inventory playbook.yml'
-        echo "mvnHome: $mvnHome"
+        sh 'echo "mvnHome: $mvnHome" '
     }
 }
 
