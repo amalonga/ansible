@@ -11,7 +11,8 @@ node {
     stage('Build') {
         // Run the playbook  build
         sh ' ansible-playbook  -i inventory playbook.yml'
-        echo "mvnHome: ${env.mvnHome}" 
+        echo "mvnHome: ${env.mvnHome}"
+        sh "printenv" 
         echo "mvnHome: ${env.BUILD_NUMBER}" 
     }
 }
